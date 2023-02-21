@@ -4,7 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Enter your order total");
+
+            double orderTotal;
+            
+            var input = double.TryParse(Console.ReadLine(), out orderTotal);
+
+            ITacoTruck order = TacoFactory.PlaceOrder(orderTotal);
+            order.Order();
+
         }
+        
     }
 }
+ 
